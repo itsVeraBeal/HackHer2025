@@ -1,3 +1,13 @@
+#add a semester
+def choose_semester():
+    semesters = ['Fall','Winter']
+    while True:
+        semester = input('Choose a semester (Fall/Winter): ')
+        if semester in semesters:
+            return semester
+        else:
+            print('Invalid semester - Enter a valid semester (Fall/Winter)')
+
 #add a course
 def add_course():
     course_list = []
@@ -24,5 +34,6 @@ def add_assessment():
             break
     return grade_list
 
+print('Semester: ',choose_semester())
 print('Course List: ',add_course())
 print('Assessment List: ',add_assessment())
