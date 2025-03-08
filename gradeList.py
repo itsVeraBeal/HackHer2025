@@ -25,8 +25,31 @@ def add_assessment():
     while True:
         print('Enter assessment details: ')
         name = input('Assessment title: ')
-        grade = int(input('Grade: '))
-        weight = float(input('Weight: '))
+        while True:
+            grade = input('Number Grade: ')
+            try:
+                grade = float(grade)
+                if grade >= 0 and grade <= 100:
+                    break
+                elif grade > 100:
+                    print('Warning: Grade is greater than 100')
+                    break
+                else:
+                    print('Grade must be a positive number')
+            except:
+                print('grade must be a number')
+            
+        while True:
+            weight = input('Weight: ')
+            try:
+                weight = float(weight)
+                if weight >= 0 and weight <= 100:
+                    break
+                else:
+                    print('Weight must be a value between 0 and 100')
+            except:
+                print('weight must be a number')
+
         assessment = [name,grade,weight]
         grade_list.append(assessment)
         user = input('Add another assessment? (y/n): ')
