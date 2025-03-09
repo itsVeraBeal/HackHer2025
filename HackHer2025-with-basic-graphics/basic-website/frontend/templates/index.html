@@ -1,0 +1,30 @@
+
+{% block head %}
+<title>Basic Website</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Grade Tracker</h1>
+    <p>insert website description</p>
+    <button id="myButton">Manage Courses</button>
+    <button id="myButton">GPA</button>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Overall Grades</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td>Courses</td>
+            
+        </tr>
+    </table>
+    <form action="">
+
+        <input type="text" placeholder="The Course Name" name="content" id="content"/>
+        <input type="submit" value = "Add Course" id = btn_add/>
+    </form>
+</div>
+{% endblock %} 

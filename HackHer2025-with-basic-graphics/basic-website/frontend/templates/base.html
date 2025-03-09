@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    <title>Basic Website</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .white-box {
+            background-color: white;
+            color: darkblue;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            padding-left: 20px; /* Add padding to the left */
+        }
+        header {
+            background-color: darkblue;
+            color: white;
+            padding: 30px 0;
+            padding-left: 50px; /* Add padding to the left */
+            text-align: left; /* Align text to the left */
+        }
+        .content {
+            padding: 15%; /* Add padding to the left */
+        }
+        .red-rectangle {
+            background-color: red;
+            width: 15%;
+            height: 4px;
+            margin: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .plus-button {
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 20px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Add the image here -->
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='Images/IMG_1094.png') }}" alt="Logo" style="width:15%; height:auto;">
+        </div>
+        <h1>Queens University</h1>
+    </header>
+    {% block body %}
+    <div class="content">
+        <h1 style="color: darkslategrey">GPA COURSE CALCULATOR</h1>
+        <div class="red-rectangle"></div>
+        <p> Calculates your Onq course GPA</p>
+         <!--
+        <button id="myButton">Manage Courses</button>
+        <button id="myButton">GPA</button>
+        -->
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        <div class="white-box">
+            <div style = "border-color: black;">
+                <div style = "width: 70%; border-color: black;">
+                    <strong>Assignments</strong>
+                </div>
+                <div style = "width: 30%; border-color: black;">
+                    <button class="plus-button" >+</button>
+                </div>
+            </div>
+            
+            
+        </div>
+        <table>
+            <tr>
+                <th>Course Name</th>
+                <th>Overall Grades</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Class</td>
+            </tr>
+        </table>
+        <form action="">
+            <input type="text" placeholder="Class Name" name="content" id="content"/>
+            <input type="submit" value="Add Class" id="btn_add"/>
+        </form>
+        <tr>
+            <td>Assignment</td>
+
+            <form action="">
+                <input type="text" placeholder="Assignment Name" name="content" id="content"/>
+                <input type="submit" value="Add Assignment" id="btn_add"/>
+
+            <form action="">
+                <input type="text" placeholder="Assignment Name" name="content" id="content"/>
+                <input type="submit" value="Add Assignment" id="btn_add"/>
+
+            <form action="">
+                <input type="text" placeholder="Assignment Name" name="content" id="content"/>
+                <input type="submit" value="Add Assignment" id="btn_add"/>
+
+            </form>
+        </tr>
+        <tr>
+            <td>Grade</td>
+            <form action="">
+                <input type="text" placeholder="Grade" name="content" id="content"/>
+                <input type="submit" value="Add Grade" id="btn_add"/>
+            <form action="">
+                <input type="text" placeholder="Grade" name="content" id="content"/>
+                <input type="submit" value="Add Grade" id="btn_add"/>
+            <form action="">
+                <input type="text" placeholder="Grade" name="content" id="content"/>
+                <input type="submit" value="Add Grade" id="btn_add"/>
+            
+            
+        
+            </form>
+        </tr>
+        <tr>
+            <td>Weight</td>
+            <form action="">
+                <input type="text" placeholder="Weight" name="content" id="content"/>
+                <input type="submit" value="Add Weight" id="btn_add"/>
+            <form action="">
+                <input type=""/>
+                <input type="submit" value="Add Weight" id="btn_add"/>
+
+            <form action="">
+                <input type="text" placeholder="Weight" name="content" id="content"/>
+                <input type="submit" value="Add Weight" id="btn_add"/>
+        
+            </form>
+        </tr>
+    </div>
+    {% endblock %}
+</body>
+</html>
