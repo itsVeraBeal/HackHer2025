@@ -1,31 +1,12 @@
-{% extends 'base.html'%}
-
-{% block head %}
-<title>Basic Website</title>
-{% endblock %}
-
-{% block body %}
-<div class="content">
-    <h1>Grade Tracker</h1>
-    <p>insert website description</p>
-    <button id="myButton">Manage Courses</button>
-    <button id="myButton">GPA</button>
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-    <table>
-        <tr>
-            <th>Course Name</th>
-            <th>Overall Grades</th>
-            <th>Notes</th>
-        </tr>
-        <tr>
-            <td>Courses</td>
-            
-        </tr>
-    </table>
-    <form action="">
-
-        <input type="text" placeholder="Course Name" name="content" id="content"/>
-        <input type="submit" value = "Add Course" id = btn_add/>
-    </form>
-</div>
-{% endblock %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block body %}{% endblock %} 
+</body>
+</html>
