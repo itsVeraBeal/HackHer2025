@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Basic Website</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Course Details</h1>
+    <form action="/grade/{{course.id}}" method="POST">
+        <input type="text" placeholder="Assessment title" name="assessmentName" id="assessmentName" required/>
+        <input type="text" placeholder="Grade" name="grade" id="grade" required/>
+        <input type="submit" value="Submit" id="btn_submit"/>
+    </form>
+    {% if assessments %}
+    <table>
+        <tr>
+            <th>Assessment Name</th>
+            <th>Grade</th>
+        </tr>
+        {% for assessment in assessments %}
+        <tr>
+            <td>{{ assessment.courseName }}</td>
+            <td>{{ assessment.grade }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>You have no added assessments.</p>
+    {% endif %}
+</div>
+{% endblock %}

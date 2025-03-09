@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>Basic Website</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1>Grade Tracker</h1>
+
+    {% if courses | length < 1 %}
+    <p> You have no courses yet. </p>
+    {% else %}
+
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Overall Grades</th>
+            <th>Notes</th>
+        </tr>
+        {% for course in courses %}
+            <tr>
+                <td>{{course.courseName}}</td>
+                <td>
+                    <a href="/grade/{{course.id}}">View Grades</a>
+                    </br>
+                    <a href="/delete/{{course.id}}">Delete Course</a>
+                    
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <form action="/" method="POST">
+        <input type="text" placeholder="Course Name" name="courseName" id="courseName"/>
+        <input type="submit" value = "Add Course" id = "btn_add"/>
+    </form>
+</div>
+{% endblock %} 
